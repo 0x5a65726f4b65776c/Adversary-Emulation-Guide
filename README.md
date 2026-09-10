@@ -142,13 +142,23 @@
 
 	- Metasploit: A popular framework for penetration testing and exploiting vulnerabilities.
 	- Empire: An open-source post-exploitation framework for Windows environments.
-	- Cobalt Strike: Although it has a commercial version, the older version of Cobalt Strike (3.13) is open source and widely used for red teaming activities.
+	- Cobalt Strike: A commercial (never open source) adversary simulation and red team platform, now sold by Fortra (formerly HelpSystems), widely used for C2 and red teaming activities.
 	- CALDERA: An open-source framework designed to automate the adversary emulation process.
-	- MITRE ATT&CK Framework: Not a tool itself, but a knowledge base that provides a comprehensive framework of known adversary tactics, techniques, and procedures (TTPs) that can guide red teaming activities.
-	- Red Canary Atomic Red Team: A subscription-based service that provides a library of adversary emulation tests based on the MITRE ATT&CK framework.
+	- MITRE ATT&CK Framework: Not a tool itself, but a knowledge base that provides a comprehensive framework of known adversary tactics, techniques, and procedures (TTPs) that can guide red teaming activities. ATT&CK is updated roughly twice a year, so don't rely on a hardcoded version number (this document included) — always check the current release at https://attack.mitre.org/resources/updates/.
+	- Atomic Red Team: A free, open-source library of small, targeted tests mapped to the MITRE ATT&CK framework, originally created by Red Canary and maintained at github.com/redcanaryco/atomic-red-team.
 	- SafeBreach: A platform that allows organizations to simulate attacks and test their security controls and detection capabilities.
 	- AttackIQ: A platform that enables continuous adversary emulations to validate and improve an organization's security posture.
 	- Verodin (now part of FireEye): A platform that allows organizations to measure, manage, and improve their security effectiveness through adversary simulations.
+
+### AI-Assisted & Agentic Adversary Emulation
+
+- A newer category of tooling uses AI/LLM agents to plan and/or execute adversary emulation, and a related-but-distinct category uses similar tooling to red team AI systems themselves.
+
+	- Prelude Operator: A free, open-source autonomous adversary emulation platform, successor in spirit to older automated breach-and-attack-simulation (BAS) tooling, that can plan and chain offensive actions with less manual operator input.
+	- AttackIQ Flex and other commercial BAS platforms: Increasingly adding AI-driven scenario generation to existing continuous validation offerings.
+	- PyRIT (Microsoft's Python Risk Identification Tool) and garak: Open-source frameworks for red teaming LLMs and generative AI systems themselves — probing a model for jailbreaks, prompt injection, and unsafe outputs. This is a distinct discipline from using AI to run traditional adversary emulation against a network, though the two are adjacent and increasingly overlap.
+	- Promptfoo (redteam module): An open-source tool for automated red teaming and security testing of LLM applications.
+	- Governance note: Autonomous/agentic emulation tools that can take real action need the same ROE discipline this guide applies to human-run engagements — doubly so. That means explicit authorization scoping, a human-in-the-loop approval gate before any destructive or lateral-movement action, and full logging of every action the agent takes.
 
 ### The Adversary Emulation Plan Library
 
@@ -239,7 +249,7 @@
 
 ### CIS Controls
 
-- Apologies for the confusion. The Center for Internet Security (CIS) Controls consists of 18 controls that provide a framework for organizations to improve their cybersecurity posture. While the controls are primarily focused on proactive cybersecurity measures, they can be used as a reference for red teaming exercises to identify vulnerabilities and assess the effectiveness of an organization's security defenses.
+- The Center for Internet Security (CIS) Controls consists of 18 controls that provide a framework for organizations to improve their cybersecurity posture. While the controls are primarily focused on proactive cybersecurity measures, they can be used as a reference for red teaming exercises to identify vulnerabilities and assess the effectiveness of an organization's security defenses.
 
 	- Inventory and Control of Hardware Assets:
 
@@ -426,7 +436,7 @@
 ## References
 
 - https://howto.thec2matrix.com/ (The C2 Matrix)
-- http://attack.mitre.org/ (Mitre Att&ck)
+- http://attack.mitre.org/ (Mitre Att&ck — check https://attack.mitre.org/resources/updates/ for the current release rather than assuming any version referenced in this guide is still current)
 - https://github.com/R0B1NL1N/adversary_emulation_library-1 (Adversary Emulation Library)
 - https://redteam.guide/ (Red Team Guide)
 - https://medium.com/mitre-engenuity/introducing-the-all-new-adversary-emulation-plan-library-234b1d543f6b (Emulation Plan)
